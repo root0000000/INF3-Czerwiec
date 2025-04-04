@@ -11,7 +11,7 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$database = "data baza";
+$database = "wedkowanie";
 
 $connection = new mysqli
 (hostname: $servername, username: $username, password: $password = "", database: $database);
@@ -30,17 +30,13 @@ echo "Connected successfully";
       <div class="left">
         <div class="left1">
           <h3>Ryby drapieżne naszych wód</h3>
-          <ol>
-            <li>Szczupak pływa w rzece Warta-Obrzycko, Wielkopolskie</li>
-            <li>Leszcz plywa w rzece Przemsza k. Okradziowa, Slaskie</li>
-          </ol>
         </div>
         <div class="left2">
           <h3>Ryby drapieżne naszych wód</h3>
             <?php
-            $result=mysqli_query(mysqli: $conection, query: "SELECT ryby.nazwa, ryby.wystepowanie FROM ryby JOIN lowisko ON ryby.id=lowisko.Ryby_id WHERE lowisko.rodzaj=3");
-            while ($item = mysqli_fetch_assoc($result)) {
-                echo "<li>",$item['nazwa'], " plywa w rzece", $item[1],</li>";
+            $result=mysqli_query($connection, "SELECT ryby.nazwa, ryby.wystepowanie FROM ryby JOIN lowisko ON ryby.id=lowisko.Ryby_id WHERE lowisko.rodzaj=3");
+            while ($item = mysqli_fetch_array($result)) {
+                echo "<li>",$item['nazwa'], " plywa w rzece", $item[1],"</li>";
             }
             ?>
         </div>
