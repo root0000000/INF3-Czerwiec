@@ -69,7 +69,7 @@ $connection = new mysqli('localhost', 'root', '', 'wedkowanie')
     </div>
 
     <div class="footer">
-        <p>Stronę wykonał: Yevhenii Zhelieznov</p>
+        <p>Stronę wykonał: </p>
     </div>
 </body>
 </html>
